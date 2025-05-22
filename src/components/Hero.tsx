@@ -6,7 +6,7 @@ const Hero = () => {
     <section className="relative min-h-screen overflow-hidden bg-buffalo-black">
       {/* Background cu efect de parallax */}
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 bg-cover bg-center md:bg-fixed"
         style={{
           backgroundImage: `
             linear-gradient(rgba(25, 25, 25, 0.4), rgba(25, 25, 25, 0.4)),
@@ -14,7 +14,6 @@ const Hero = () => {
           `,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed",
         }}
       />
 

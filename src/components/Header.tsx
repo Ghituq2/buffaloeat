@@ -55,14 +55,14 @@ const Header = () => {
             <a
               key={item.name}
               href={item.href}
-              className="text-white font-medium hover:text-buffalo-yellow transition-colors"
+              className="text-white font-bold text-lg uppercase tracking-wide hover:text-buffalo-yellow transition-colors"
             >
               {item.name}
             </a>
           ))}
           <Button
             asChild
-            className="bg-buffalo-yellow text-buffalo-black font-bold hover:bg-yellow-400 transition-colors"
+            className="bg-buffalo-yellow text-buffalo-black font-bold text-lg uppercase tracking-wide hover:bg-yellow-400 transition-colors"
           >
             <a href="#order">Comandă acum</a>
           </Button>
@@ -87,7 +87,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-white font-medium hover:text-buffalo-yellow transition-colors"
+                className="text-white font-bold text-lg uppercase tracking-wide hover:text-buffalo-yellow transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
@@ -95,7 +95,7 @@ const Header = () => {
             ))}
             <Button
               asChild
-              className="bg-buffalo-yellow text-buffalo-black font-bold hover:bg-yellow-400 w-full"
+              className="bg-buffalo-yellow text-buffalo-black font-bold text-lg uppercase tracking-wide hover:bg-yellow-400 w-full"
               onClick={() => setIsMenuOpen(false)}
             >
               <a href="#order">Comandă acum</a>

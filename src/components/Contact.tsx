@@ -104,7 +104,6 @@ const Contact = () => {
               allowFullScreen 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              className="grayscale group-hover:grayscale-0 transition-all duration-300"
             ></iframe>
           </div>
         </div>

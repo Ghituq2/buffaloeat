@@ -17,7 +17,7 @@ const reviews: Review[] = [
     date: "15 martie 2024",
     rating: 5,
     comment: "Cel mai bun burger pe care l-am mâncat vreodată în Onești! Carnea este suculentă, iar sosurile sunt făcute în casă. Recomand cu încredere!",
-    image: "/images/reviews/review1.jpg"
+    image: "/images/placeholder.png"
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const reviews: Review[] = [
     date: "10 martie 2024",
     rating: 5,
     comment: "Am comandat Double Truffle și a fost o experiență culinară deosebită. Porțiile sunt generoase, iar personalul este foarte amabil.",
-    image: "/images/reviews/review2.jpg"
+    image: "/images/placeholder.png"
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const reviews: Review[] = [
     date: "5 martie 2024",
     rating: 5,
     comment: "Buffalo Eat este acum locul meu preferat pentru burgeri! Calitatea și gustul sunt constante, iar prețurile sunt corecte pentru ce oferă.",
-    image: "/images/reviews/review3.jpg"
+    image: "/images/placeholder.png"
   }
 ];
 

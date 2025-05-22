@@ -14,42 +14,42 @@ const menuItems: MenuItem[] = [
     id: 1,
     name: "Big Buffalo Burger",
     description: "Burgerul nostru iconic, în varianta XL cu carne de vită premium, brânză cheddar, legume proaspete și sosul nostru special Buffalo",
-    image: "/images/logo.png",
+    image: "/images/placeholder.png",
     price: "55 lei"
   },
   {
     id: 2,
     name: "Double Truffle Gold Burger",
     description: "Experiență culinară de lux cu dublu strat de carne de vită, sos special cu trufe și brânză premium topită",
-    image: "/images/logo.png",
+    image: "/images/placeholder.png",
     price: "45 lei"
   },
   {
     id: 3,
     name: "El Diablo Burger (Double)",
     description: "Pentru iubitorii de senzații tari: dublu strat de carne, jalapenos, sos picant special și brânză cheddar topită",
-    image: "/images/logo.png",
+    image: "/images/placeholder.png",
     price: "45 lei"
   },
   {
     id: 4,
     name: "Big Cheeseburger",
     description: "Paradisul iubitorilor de brânză: burger generos cu carne de vită, mix special de brânzeturi și sos secret",
-    image: "/images/logo.png",
+    image: "/images/placeholder.png",
     price: "55 lei"
   },
   {
     id: 5,
     name: "Double Fire Roasted Burger",
     description: "Savoare intensă cu carne dublă la grătar, legume coapte la foc și sos special de casă",
-    image: "/images/logo.png",
+    image: "/images/placeholder.png",
     price: "45 lei"
   },
   {
     id: 6,
     name: "14 Aripioare Asian Zinc",
     description: "Aripioare crocante cu un twist asiatic special, servite cu sos unic Asian Zinc",
-    image: "/images/logo.png",
+    image: "/images/placeholder.png",
     price: "48 lei"
   }
 ];

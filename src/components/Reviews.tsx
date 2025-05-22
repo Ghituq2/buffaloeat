@@ -1,96 +1,112 @@
-
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Star, Quote } from "lucide-react";
 
-interface ReviewType {
+interface Review {
   id: number;
   name: string;
-  rating: number;
-  content: string;
   date: string;
-  source: "Google" | "Facebook";
+  rating: number;
+  comment: string;
+  image: string;
 }
 
-const reviews: ReviewType[] = [
+const reviews: Review[] = [
   {
     id: 1,
-    name: "Alexandru M.",
+    name: "Alexandru Popescu",
+    date: "15 martie 2024",
     rating: 5,
-    content: "Cei mai buni burgeri din oraș! Carnea este suculentă, ingredientele proaspete, iar sosul special este incredibil. Recomand cu încredere!",
-    date: "12 mai",
-    source: "Google"
+    comment: "Cel mai bun burger pe care l-am mâncat vreodată în Onești! Carnea este suculentă, iar sosurile sunt făcute în casă. Recomand cu încredere!",
+    image: "/images/reviews/review1.jpg"
   },
   {
     id: 2,
-    name: "Maria D.",
-    rating: 4,
-    content: "Burgerii sunt delicioși, iar personalul foarte amabil. Singurul minus ar fi timpul de așteptare, dar merită până la urmă!",
-    date: "3 aprilie",
-    source: "Facebook"
+    name: "Maria Ionescu",
+    date: "10 martie 2024",
+    rating: 5,
+    comment: "Am comandat Double Truffle și a fost o experiență culinară deosebită. Porțiile sunt generoase, iar personalul este foarte amabil.",
+    image: "/images/reviews/review2.jpg"
   },
   {
     id: 3,
-    name: "Cristian P.",
+    name: "Andrei Dumitrescu",
+    date: "5 martie 2024",
     rating: 5,
-    content: "Buffalo Eat face cei mai buni smash burgeri din zona Onești. Am comandat prin Glovo și au ajuns calzi și perfect ambalați. Voi reveni cu siguranță!",
-    date: "27 martie",
-    source: "Google"
+    comment: "Buffalo Eat este acum locul meu preferat pentru burgeri! Calitatea și gustul sunt constante, iar prețurile sunt corecte pentru ce oferă.",
+    image: "/images/reviews/review3.jpg"
   }
 ];
 
 const Reviews = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-buffalo-black mb-4">
-            Recenzii <span className="text-buffalo-yellow">Clienți</span>
+    <section className="py-24 bg-white relative overflow-hidden">
+      {/* Pattern overlay */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+        }} />
+      </div>
+
+      <div className="relative container mx-auto px-4">
+        <div className="max-w-2xl mx-auto text-center mb-16">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-buffalo-black">
+            Ce spun <span className="text-buffalo-yellow">clienții</span> noștri
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Ce spun clienții noștri despre Buffalo Eat
+          <p className="text-xl text-gray-600">
+            Părerile clienților noștri sunt cea mai bună recomandare
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {reviews.map((review) => (
-            <Card key={review.id} className="hover:shadow-lg transition-shadow h-full">
-              <CardContent className="p-6 flex flex-col h-full">
-                <div className="flex items-center justify-between mb-4">
-                  <p className="font-bold text-buffalo-black">{review.name}</p>
-                  <div className="flex gap-1">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <span 
-                        key={i} 
-                        className={`text-lg ${i < review.rating ? "text-yellow-500" : "text-gray-300"}`}
-                      >
-                        ★
-                      </span>
-                    ))}
+            <div 
+              key={review.id}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group border border-gray-100"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="relative">
+                  <div className="w-16 h-16 rounded-full overflow-hidden">
+                    <img 
+                      src={review.image} 
+                      alt={review.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute -bottom-2 -right-2 bg-buffalo-yellow rounded-full p-1">
+                    <Quote className="w-4 h-4 text-buffalo-black" />
                   </div>
                 </div>
-                <p className="text-gray-600 flex-grow mb-4">{review.content}</p>
-                <div className="flex items-center justify-between text-sm text-gray-500 mt-auto pt-4 border-t border-gray-100">
-                  <span>{review.date}</span>
-                  <span className={`${review.source === "Google" ? "text-blue-500" : "text-blue-600"}`}>
-                    {review.source}
-                  </span>
+                <div>
+                  <h3 className="font-bold text-lg text-buffalo-black">{review.name}</h3>
+                  <p className="text-gray-500 text-sm">{review.date}</p>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+
+              <div className="flex gap-1 mb-4">
+                {[...Array(review.rating)].map((_, i) => (
+                  <Star 
+                    key={i}
+                    className="w-5 h-5 fill-buffalo-yellow text-buffalo-yellow"
+                  />
+                ))}
+              </div>
+
+              <p className="text-gray-600 leading-relaxed group-hover:text-buffalo-black transition-colors duration-300">
+                {review.comment}
+              </p>
+            </div>
           ))}
         </div>
 
-        <div className="text-center mt-10">
+        <div className="mt-16 text-center">
           <a 
-            href="https://www.instagram.com/buffaloeatonesti/" 
-            target="_blank" 
+            href="https://g.page/r/buffalo-eat-reviews" 
+            target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-lg font-medium text-buffalo-black hover:text-buffalo-yellow transition-colors"
+            className="inline-flex items-center gap-2 bg-buffalo-yellow text-buffalo-black px-8 py-4 rounded-xl font-bold hover:gap-4 transition-all duration-300 hover:shadow-lg"
           >
-            <svg className="h-6 w-6 text-pink-600" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-            </svg>
-            Urmărește-ne pe @buffaloeatonesti
+            Vezi toate recenziile
+            <Star className="w-5 h-5" />
           </a>
         </div>
       </div>

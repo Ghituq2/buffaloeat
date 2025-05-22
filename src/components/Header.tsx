@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -28,14 +27,14 @@ const Header = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled 
-          ? "py-2 bg-buffalo-black/95 bg-blur shadow-lg" 
-          : "py-4 bg-transparent"
+          ? "py-2 bg-[#191919]/95 shadow-lg backdrop-blur-sm" 
+          : "py-4 bg-[#191919]/80 backdrop-blur-sm"
       )}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
           <img 
-            src="/lovable-uploads/9d27e115-c99f-4e4f-950d-0635383c2a85.png" 
+            src="/images/logo.png" 
             alt="Buffalo Eat Logo" 
             className="h-12 md:h-14" 
           />
@@ -73,7 +72,7 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-buffalo-black py-4 px-4">
+        <div className="md:hidden bg-[#191919] py-4 px-4 shadow-lg">
           <nav className="flex flex-col space-y-4">
             {navItems.map((item) => (
               <a
